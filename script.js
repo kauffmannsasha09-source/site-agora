@@ -28,3 +28,13 @@ function finish(){area.hidden=true;result.hidden=false;fill.style.width='100%';p
 document.querySelectorAll('.answers button').forEach(btn=>btn.addEventListener('click',()=>{score+=Number(btn.dataset.v);index++;index<questions.length?updateQuiz():finish();}));
 restart.addEventListener('click',()=>{index=0;score=0;area.hidden=false;result.hidden=true;updateQuiz();q.focus?.();});
 updateQuiz();
+
+// Premium hero interactions — progressive enhancement only
+const hero=document.querySelector('.hero'), glow=document.querySelector('#cursorGlow'), glass=document.querySelector('.glass');
+if(hero && glow && !reduced){
+  hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();glow.style.left=(e.clientX-r.left)+'px';glow.style.top=(e.clientY-r.top)+'px';});
+}
+if(glass && !reduced && window.matchMedia('(pointer:fine)').matches){
+  glass.addEventListener('pointermove',e=>{const r=glass.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;glass.style.transform='perspective(900px) rotateY('+(x*5)+'deg) rotateX('+(-y*5)+'deg) rotateZ(1deg)';});
+  glass.addEventListener('pointerleave',()=>glass.style.transform='rotate(1.5deg)');
+}
