@@ -46,3 +46,14 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:150;op
 .section-head h2,.snapshot-title h2,.closing h2{text-wrap:balance}
 @media(max-width:900px){.snapshot{grid-template-columns:1fr;gap:45px}.snapshot-title{position:static}.closing{min-height:auto}.skills-strip{justify-content:flex-start}}
 @media(max-width:600px){.snapshot{padding:80px 22px}.snapshot-grid{grid-template-columns:1fr}.snapshot-grid article{min-height:220px}.skills-strip{gap:12px}.skills-strip i{display:none}.closing{padding:95px 22px}.closing h2{font-size:46px}.closing-actions{flex-direction:column}.closing-mark{font-size:420px}}
+
+/* V4.1 — contrast & readability pass */
+:root{--muted:#5f6769}
+.hero .eyebrow{color:#c1c8ca}.hero-status{color:#aeb7b9}.lead{color:#d0d5d6}.glass-top,.mini{color:#aab2b4}.tags span{color:#d4d9da}.glass-footer span{color:#aeb6b8}.scroll{color:#aab2b4}
+.spirit-copy p{color:#535b5d}.kicker{color:#5e6668}.section-index p{color:#697173}.dark-label{color:#596164}.section-head>p:last-of-type{color:#50585a}.facts span{color:#626a6c}.cards-intro p{color:#626a6c}.cards-intro span{color:#60686a}.cards p{color:#5d6567}.cards article>b{color:#777f80}
+.dark .section-index p,.future .section-index p{color:#a7b0b2}.dark .section-head>p:last-of-type,.future .section-head>p:last-of-type{color:#bcc4c6}.timeline time{color:#a9b2b4}.timeline small{color:#9fa9ab}.timeline p{color:#b4bdbe}.dark .note{color:#9fa8aa}.skills-strip span{color:#b7c0c2}
+.source-note{color:#626a6c}.stack article>span{color:#737b7c}.stack p{color:#5e6668}.path small{color:#a9b3b5}.path-option p{color:#b4bdbe}
+.quiz-intro>p:last-child{color:#545c5e}.quiz-top>span{color:#a7b0b2}.quizbox>.note{color:#a5aeb0}#result small{color:#aab3b5}#result p{color:#c4cbcc}
+.snapshot-grid span{color:#747c7d}.snapshot-grid p{color:#596164}.closing .kicker{color:#aeb7b9}.closing-content>p{color:#bbc3c5}
+.source-links span{color:#626a6c}footer{color:#aab2b4}.footer-note,.footer-brand p{color:#9ba4a6}
+@media(max-width:600px){.lead{color:#d7dcdd}.timeline p,.path-option p{color:#c0c7c9}}
