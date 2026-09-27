@@ -38,3 +38,15 @@ if(glass && !reduced && window.matchMedia('(pointer:fine)').matches){
   glass.addEventListener('pointermove',e=>{const r=glass.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;glass.style.transform='perspective(900px) rotateY('+(x*5)+'deg) rotateX('+(-y*5)+'deg) rotateZ(1deg)';});
   glass.addEventListener('pointerleave',()=>glass.style.transform='rotate(1.5deg)');
 }
+
+
+// Reading progress
+const pageProgress=document.querySelector('#pageProgress');
+function updatePageProgress(){if(!pageProgress)return;const max=document.documentElement.scrollHeight-innerHeight;pageProgress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';}
+window.addEventListener('scroll',updatePageProgress,{passive:true});updatePageProgress();
+
+// Subtle parallax for decorative hero elements
+if(!reduced && window.matchMedia('(pointer:fine)').matches){
+  const wm=document.querySelector('.hero-watermark'), o1=document.querySelector('.o1');
+  window.addEventListener('scroll',()=>{if(scrollY<innerHeight*1.2){const y=scrollY; if(wm)wm.style.transform='translateY('+(y*.08)+'px)';if(o1)o1.style.transform='translateY('+(y*.04)+'px)';}},{passive:true});
+}
